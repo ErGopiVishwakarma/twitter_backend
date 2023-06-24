@@ -64,7 +64,7 @@ authRouter.get(
 // logout route 
 authRouter.get("/logout", (req, res) => {
 	req.logout();
-	res.redirect(`${failedRedirect}`);
+	res.redirect(failedRedirect);
 });
 
 module.exports = authRouter
