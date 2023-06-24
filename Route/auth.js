@@ -3,7 +3,7 @@ const passport = require("passport");
 const jwt = require('jsonwebtoken')
 const UserModel = require('../model/userModel')
 const successRedirect = `${process.env.CLIENT_URL}`
-const failedRedirect =  `${process.env.CLIENT_URL}/auth`
+const failedRedirect = `${process.env.CLIENT_URL}/auth`
 
 authRouter.get('/', (req, res) => {
 	res.send('this is auth page')
@@ -64,7 +64,7 @@ authRouter.get(
 // logout route 
 authRouter.get("/logout", (req, res) => {
 	req.logout();
-	res.redirect(process.env.CLIENT_URL);
+	res.redirect(`${failedRedirect}`);
 });
 
 module.exports = authRouter
