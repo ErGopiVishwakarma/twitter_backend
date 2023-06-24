@@ -2,8 +2,8 @@ const authRouter = require("express").Router();
 const passport = require("passport");
 const jwt = require('jsonwebtoken')
 const UserModel = require('../model/userModel')
-const successRedirect = "http://localhost:3000/"
-const failedRedirect = "http://localhost:3000/auth"
+const successRedirect = `${process.env.CLIENT_URL}`
+const failedRedirect =  `${process.env.CLIENT_URL}/auth`
 
 authRouter.get('/', (req, res) => {
 	res.send('this is auth page')
