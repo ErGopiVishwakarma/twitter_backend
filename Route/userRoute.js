@@ -11,6 +11,10 @@ userRouter.get('/', (req, res) => {
     res.send('hii this is user page')
 })
 
+userRouter.get('/gopi',(req,res)=>{
+    res.send('hii gopi vishwakarma')
+})
+
 userRouter.post('/signup', async(req, res) => {
     const { name, email, pic } = req.body
     try {
