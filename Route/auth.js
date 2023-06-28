@@ -2,8 +2,8 @@ const authRouter = require("express").Router();
 const passport = require("passport");
 const jwt = require('jsonwebtoken')
 const UserModel = require('../model/userModel')
-const successRedirect = `http://localhost:3000`
-const failedRedirect = `http://localhost:3000/auth`
+const successRedirect = `https://twitter-zeta-sooty.vercel.app`
+const failedRedirect = `https://twitter-zeta-sooty.vercel.app/auth`
 
 authRouter.get('/', (req, res) => {
 	res.send('this is auth page')
