@@ -1,9 +1,10 @@
 
 const express = require('express')
-const UserModel = require('../model/userModel')
 const jwt = require('jsonwebtoken')
+const UserModel = require('../model/userModel')
 const authenticate = require('../middleware/authentication')
 const PostModel = require('../model/postModel')
+
 
 const userRouter = express.Router()
 
