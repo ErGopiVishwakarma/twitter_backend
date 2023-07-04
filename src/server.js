@@ -8,7 +8,7 @@ const { userRouter } = require("./Route/userRoute");
 const postRouter = require("./Route/postRoute");
 const authenticate = require("./middleware/authentication");
 const connection = require('./db')
-// const passportStrategy = require("./passport");
+const passportStrategy = require("./passport");
 
 
 
