@@ -17,6 +17,7 @@ authRouter.get("/login/success", async (req, res) => {
 		return res.redirect(`${failedRedirect}?authsuccess=false`)
 	  }
 		try {
+			let num = Math.floor(Math.random() * 10000);
 			const { name, email, picture } = req.user._json
 			const data = await UserModel.find({ email })
 			if (data.length >= 1) {
@@ -24,7 +25,7 @@ authRouter.get("/login/success", async (req, res) => {
 				let id = data[0]._id
 				res.redirect(`${successRedirect}?userID=${id}&token=${token}`)
 			} else {
-				const user = new UserModel({ name, email, pic:picture })
+				const user = new UserModel({ name, email, pic:picture,username:`${name}${num}`})
 				await user.save()
 				var token = jwt.sign({ userId: user._id }, 'twitter');
 				let id = data[0]._id
