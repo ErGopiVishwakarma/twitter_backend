@@ -15,6 +15,7 @@ let flag = true
 userRouter.get('/getuser',authenticate, async (req, res) => {
     
     UserModel.find().select('name pic _id username').then(result => {
+        result= result.reverse()
         if (result.length > 3) {
             if (flag == true) {
                 let data = result.slice(0, 3).reverse()
