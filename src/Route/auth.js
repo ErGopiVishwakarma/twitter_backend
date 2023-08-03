@@ -2,7 +2,7 @@ const authRouter = require("express").Router();
 const passport = require("passport");
 const jwt = require('jsonwebtoken');
 const UserModel = require("../model/userModel");
-const successRedirect = `https://twitter-umber.vercel.app`
+const successRedirect = `http://localhost:3000`
 const failedRedirect = `https://twitter-umber.vercel.app/auth`
 
 authRouter.get('/', (req, res) => {
@@ -37,7 +37,6 @@ authRouter.get("/login/success", async (req, res) => {
 		}
 
 });
-
 
 
 // failed route 
